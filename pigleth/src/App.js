@@ -87,10 +87,12 @@ metamaskButton = async () => {
   // Metamask connection
   if (window.web3.currentProvider.isMetaMask === true) {
     await window.ethereum.enable();
+    this.setState({web3: window.web3});
     window.web3.eth.getAccounts((error, accounts) => {
       if (accounts.length === 0) {
         console.log("no active accounts");
         // there is no active accounts in MetaMask
+        this.setState({account: accounts[0]})
       } else {
         // it's ok
         console.log("ok");
@@ -111,6 +113,7 @@ metamaskButton = async () => {
   }
   this.afterLogin();
 }
+
 torusButton = async () => {
   const torus = new Torus({
     buttonPosition: "bottom-left" // default: bottom-left
@@ -127,6 +130,7 @@ torusButton = async () => {
   });
   await torus.login(); // await torus.ethereum.enable()
   const web3 = new Web3(torus.provider);
+  this.setState({web3: web3, account: web3.eth.getAccounts()[0]})
   this.afterLogin();
 }
 afterLogin = () => {

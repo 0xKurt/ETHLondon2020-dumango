@@ -97,6 +97,9 @@ contract Fund {
         monthlyAmount = 0;
         pensionAge = 0;
         currentAge = 0;
+        lastPayment = 0;
+        lastPension = 0;
+        pensionYear = 0;
     }
 
     function setLastPayment(uint _day, uint _month, uint _year) public isOwner() {
