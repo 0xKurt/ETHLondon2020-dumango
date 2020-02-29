@@ -17,6 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Torus from "@toruslabs/torus-embed";
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Setup from './components/Setup';
@@ -36,7 +37,9 @@ class App extends Component {
         web3: 'undefined',
         account: 'undefined',
 
-        fundData: 'undefined'
+        fundData: 'undefined',
+
+        loggedInBy: 'undefined'
 
       }
   }
@@ -80,38 +83,11 @@ isNotManager = () => {
 // Login methods
 //
 metamaskButton = async () => {
-    if (typeof web3 !== 'undefined') {
-      console.log("web3 !== undefined");
-      window.web3 = new Web3(window.web3.currentProvider)
 
-  // Metamask connection
-  if (window.web3.currentProvider.isMetaMask === true) {
-    await window.ethereum.enable();
-    this.setState({web3: window.web3});
-    window.web3.eth.getAccounts((error, accounts) => {
-      if (accounts.length === 0) {
-        console.log("no active accounts");
-        // there is no active accounts in MetaMask
-        this.setState({account: accounts[0]})
-      } else {
-        // it's ok
-        console.log("ok");
-        this.setState({account: accounts[0], loggedIn: true});
-        console.log(this.props.account);
-      }
-    });
-
-    // for other providers
-  } else {
-    console.log("other web3 provider");
-    // Another web3 provider
-  }
-  } else {
-  alert("Please install browser wallet. e.g. metamask")
-  console.log("no web3 provider");
-  // No web 3 provider
-  }
-  this.afterLogin();
+    console.log("ok");
+    this.setState({loggedIn: true, loggedInBy: 'dapphero'});
+    console.log(this.props.account);
+    this.afterLogin();
 }
 
 torusButton = async () => {
@@ -160,6 +136,10 @@ setupSaveButton = async (fundState) => {
   this.isProfile();
 }
 
+isLoggedInBy = async () => {
+  await this.setState
+}
+
   render() {
     return (
       <div className="App">
@@ -167,15 +147,21 @@ setupSaveButton = async (fundState) => {
 
           {this.state.isHeader && <Header />}
 
-          </div>
-          <div class="body">
-          <br /> <br />
-            {this.state.isLogin && <Login metamaskButton={this.metamaskButton} torusButton={this.torusButton} />}
-            {this.state.isProfile && <Profile fundData={this.state.fundData} setupButton={this.setupButton} managerButton={this.managerButton} Profile />}
-            {this.state.isSetup && <Setup setupSaveButton={this.setupSaveButton}/>}
-            {this.state.isManager && <Manager />}
-          </div>
         </div>
+
+        <div class="body">
+        <br /> <br />
+          {this.state.isLogin && <Login metamaskButton={this.metamaskButton} torusButton={this.torusButton} />}
+          {this.state.isProfile && <Profile fundData={this.state.fundData} setupButton={this.setupButton} managerButton={this.managerButton} Profile />}
+          {this.state.isSetup && <Setup setupSaveButton={this.setupSaveButton} isLoggedInBy={this.state.loggedInBy}/>}
+          {this.state.isManager && <Manager />}
+        </div>
+
+        <div class="footer">
+            {this.state.isFooter && <Footer /> }
+        </div>
+
+      </div>
     );
   }
 }
