@@ -6,8 +6,10 @@ class Footer extends Component {
 
   render() {
     return (
-      <div class="footer">
+      <div>
+        <center>
           Trust in piggy!
+        </center>
       </div>
     );
   }

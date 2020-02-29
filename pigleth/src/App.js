@@ -29,6 +29,7 @@ class App extends Component {
     super();
       this.state = {
         isHeader: true,
+        isFooter: true, 
         isLogin: true,
         isProfile: false,
         isSetup: false,
