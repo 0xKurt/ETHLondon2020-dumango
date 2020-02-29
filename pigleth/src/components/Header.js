@@ -1,7 +1,7 @@
 // dumango
 
 import React from 'react';
-import {Figure} from 'react-bootstrap'
+import logo from './logo.svg';
 
 class Header extends React.Component {
 
@@ -13,7 +13,7 @@ class Header extends React.Component {
     return (
       <div>
       <center>
-          <img src="https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1041987450-768x550.jpg" width="76" height="55" />
+          <img src={logo} alt="logo" />
           <br />
           pigleth - piggy bank like pension fund
       </center>

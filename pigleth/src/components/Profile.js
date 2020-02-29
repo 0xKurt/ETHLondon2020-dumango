@@ -33,7 +33,32 @@ checkFund = () => {
             <ButtonGroup toggle>
             <Button onClick={this.props.setupButton} variant="primary" size ="lg">Set up new Fund</Button>
           </ButtonGroup>}
-          { isFund && <p>{this.props.fundData.pension}</p>}
+          { isFund &&
+            <p>
+              <h5>Fund Data: </h5>
+              <table>
+              <tr>
+                <td><b>current age: </b></td>
+                <td>{this.props.fundData.currentAge}</td>
+              </tr>
+              <tr>
+                <td><b>age at pension: </b></td>
+                <td>{this.props.fundData.pensionAge}</td>
+              </tr>
+              <tr>
+                <td><b>years until pension: </b></td>
+                <td>{this.props.fundData.ageDiff}</td>
+              </tr>
+              <tr>
+                <td><b>monthly amount: </b></td>
+                <td>{this.props.fundData.amount}</td>
+              </tr>
+              <tr>
+                <td><b>monthly pension: </b></td>
+                <td>{this.props.fundData.pension}</td>
+              </tr>
+              </table>
+            </p>}
           <br /> <br />
           <ButtonGroup toggle>
             <Button onClick={this.props.managerButton} variant="primary" size ="lg">Manage Fund</Button>

@@ -42,21 +42,20 @@ class Setup extends React.Component {
 
   render() {
     return (
-      // jahre einzahlen, summe, jahre auszahlen, button: anlegen, alter, alter rente
       <div>
-      <center>
-        current age: <p> <input type="text" name="currentAge" value={this.state.currentAge} onChange={this.currentAgeHandler} /> </p>
-        pension age: <p> <input type="text" name="pensionAge" value={this.state.pensionAge} onChange={this.pensionAgeHandler} /> </p>
-        monthly amount: <p> <input type="text" name="currentAge" value={this.state.amount} onChange={this.amountHandler} /> </p>
-        <br /> years until pension: {this.state.ageDiff}
-        <br /> monthly pension: {this.state.pension}
-        <br />
-        <ButtonGroup toggle>
-          <p><Button onClick={this.onClickHandlerCalc} variant="primary" size ="lg">calculate</Button></p><p>  </p>
-          <p><Button onClick={this.onClickHandlerSave} variant="primary" size ="lg">save</Button></p>
-        </ButtonGroup>
+        <center>
+          current age: <p> <input type="text" name="currentAge" value={this.state.currentAge} onChange={this.currentAgeHandler} /> </p>
+          pension age: <p> <input type="text" name="pensionAge" value={this.state.pensionAge} onChange={this.pensionAgeHandler} /> </p>
+          monthly amount: <p> <input type="text" name="currentAge" value={this.state.amount} onChange={this.amountHandler} /> </p>
+          <br /> years until pension: {this.state.ageDiff}
+          <br /> monthly pension: {this.state.pension}
+          <br />
+          <ButtonGroup toggle>
+            <p><Button onClick={this.onClickHandlerCalc} variant="primary" size ="lg">calculate</Button></p><p>  </p>
+            <p><Button onClick={this.onClickHandlerSave} variant="primary" size ="lg">save</Button></p>
+          </ButtonGroup>
 
-      </center>
+        </center>
       </div>
     );
   }
