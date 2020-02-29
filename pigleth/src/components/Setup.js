@@ -49,10 +49,13 @@ class Setup extends React.Component {
           monthly amount: <p> <input type="text" name="currentAge" value={this.state.amount} onChange={this.amountHandler} /> </p>
           <br /> years until pension: {this.state.ageDiff}
           <br /> monthly pension: {this.state.pension}
-          <br />
+          <br /> <br /> <br />
           <ButtonGroup toggle>
-            <p><Button onClick={this.onClickHandlerCalc} variant="primary" size ="lg">calculate</Button></p><p>  </p>
-            <p><Button onClick={this.onClickHandlerSave} variant="primary" size ="lg">save</Button></p>
+            <p><Button onClick={this.onClickHandlerCalc} variant="light" size ="lg">calculate</Button></p>
+          </ButtonGroup>
+          <br />
+          <ButtonGroup>
+            <p><Button onClick={this.onClickHandlerSave} variant="light" size ="lg">save</Button></p>
           </ButtonGroup>
 
         </center>

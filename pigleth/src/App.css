@@ -1,22 +1,33 @@
 div.App {
+  position: fixed;
   flex: 1;
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding: 0 auto;
+  vertical-align: middle;
 
 }
 div.header {
+  top: 50px;
+  position: fixed;
   width: 100%;
-  height: 20%;
+  height: 350px;
   margin: 0 auto;
   padding: 0 auto;
+  color: #ff87bbff;
+  vertical-align: middle;
 }
 
+
 div.body {
-    background-color: #ff87bbff;
+    position: fixed;
+    background-color: #f27eb2;
     width: 100%;
-    height: 100%;
+    height: 400px;
     margin: 0 auto;
     padding: 0 auto;
+    color: #ffffff;
+    vertical-align: middle;
+    bottom: 0;
 }

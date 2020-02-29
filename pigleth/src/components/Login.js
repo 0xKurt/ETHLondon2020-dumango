@@ -17,11 +17,11 @@ class Login extends React.Component {
           <h3> Login: </h3>
           <br />
           <ButtonGroup toggle>
-            <Button onClick={this.props.metamaskButton} variant="primary" size ="lg">Metamask</Button>
+            <Button onClick={this.props.metamaskButton} variant="light" size ="lg">Metamask</Button>
           </ButtonGroup>
           <br /> <br />
           <ButtonGroup toggle>
-            <Button onClick={this.props.torusButton} variant="primary" size ="lg">Torus</Button>
+            <Button onClick={this.props.torusButton} variant="light" size ="lg">Torus</Button>
           </ButtonGroup>
         </center>
       </div>

@@ -31,7 +31,7 @@ checkFund = () => {
           <br />
           { !isFund &&
             <ButtonGroup toggle>
-            <Button onClick={this.props.setupButton} variant="primary" size ="lg">Set up new Fund</Button>
+            <Button onClick={this.props.setupButton} variant="light" size ="lg">Set up new Fund</Button>
           </ButtonGroup>}
           { isFund &&
             <p>
@@ -61,7 +61,7 @@ checkFund = () => {
             </p>}
           <br /> <br />
           <ButtonGroup toggle>
-            <Button onClick={this.props.managerButton} variant="primary" size ="lg">Manage Fund</Button>
+            <Button onClick={this.props.managerButton} variant="light" size ="lg">Manage Fund</Button>
           </ButtonGroup>
         </center>
       </div>

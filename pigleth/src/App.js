@@ -160,9 +160,12 @@ setupSaveButton = async (fundState) => {
     return (
       <div className="App">
         <div class="header">
+
           {this.state.isHeader && <Header />}
+
           </div>
           <div class="body">
+          <br /> <br />
             {this.state.isLogin && <Login metamaskButton={this.metamaskButton} torusButton={this.torusButton} />}
             {this.state.isProfile && <Profile fundData={this.state.fundData} setupButton={this.setupButton} managerButton={this.managerButton} Profile />}
             {this.state.isSetup && <Setup setupSaveButton={this.setupSaveButton}/>}
