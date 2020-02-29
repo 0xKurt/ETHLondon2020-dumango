@@ -17,7 +17,11 @@ class Login extends React.Component {
           <h3> Login: </h3>
           <br />
           <ButtonGroup toggle>
-            <Button onClick={this.props.metamaskButton} variant="light" size ="lg">Metamask</Button>
+            <Button
+            data-dh-feature="network"
+            data-dh-property-enable="true"
+            onClick={this.props.metamaskButton} 
+            variant="light" size ="lg">Metamask</Button>
           </ButtonGroup>
           <br /> <br />
           <ButtonGroup toggle>
